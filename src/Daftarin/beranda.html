@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -24,6 +24,7 @@
 	<script languange="JavaScript">
 		if (typeof module === 'object') { window.module = module; module = undefined; }
 	</script>
+
 </head>
 
 <body>
@@ -75,7 +76,8 @@
 												</a>
 											</li>
 											<li class="nav-item">
-												<a onclick="logout();return false;" href="javascript:;" class="nav-link">
+												<a onclick="logout();return false;" href="javascript:;"
+													class="nav-link">
 													<i data-feather="log-out"></i>
 													<span>Log Out</span>
 												</a>
@@ -137,11 +139,17 @@
 
 				<div class="row chat-wrapper">
 					<div class="col-md-12">
-            <div class="card">
-              <div class="card-body">
-             Selamat datang, pilih cara pendaftaran anda....
-              </div>
-            </div>
+						<div class="card">
+							<div class="card-body">
+								Selamat datang, pilih cara pendaftaran anda....
+
+								<br><br>
+								<button id="current">
+									Print Current Content of Page
+								</button>
+
+							</div>
+						</div>
 					</div>
 				</div>
 
@@ -181,5 +189,38 @@
 	<script src="../assets/js/custom.js"></script>
 	<!-- end custom js for this page -->
 </body>
+
+<script>
+	const electron = require('electron')
+	// Importing BrowserWindow from Main 
+	const BrowserWindow = electron.remote.BrowserWindow;
+
+	var current = document.getElementById('current');
+	var options = {
+		silent: true,
+		printBackground: true,
+		color: false,
+		margin: {
+			marginType: 'printableArea'
+		},
+		landscape: false,
+		pagesPerSheet: 1,
+		collate: false,
+		copies: 1,
+		header: 'Header of the Page',
+		footer: 'Footer of the Page'
+	}
+
+	current.addEventListener('click', (event) => {
+		let win = BrowserWindow.getFocusedWindow();
+		// let win = BrowserWindow.getAllWindows()[0]; 
+
+		win.webContents.print(options, (success, failureReason) => {
+			if (!success) console.log(failureReason);
+
+			console.log('Print Initiated');
+		});
+	}); 
+</script>
 
 </html>

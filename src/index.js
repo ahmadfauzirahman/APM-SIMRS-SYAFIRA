@@ -17,7 +17,7 @@ const createWindow = () => {
     kiosk: true,
     // skipTaskbar: true,
 	webPreferences: {
-	  devTools: false
+	  // devTools: false
 	}
   });
 
