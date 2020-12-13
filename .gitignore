@@ -87,3 +87,8 @@ typings/
 
 # Electron-Forge
 out/
+
+# node module
+/node_modules
+# node module
+/DaftarIN-win32-x64
