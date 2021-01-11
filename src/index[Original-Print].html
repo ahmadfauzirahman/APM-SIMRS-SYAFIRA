@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NobleUI Responsive Bootstrap 4 Dashboard Template</title>
+  
+		<script languange="JavaScript">
+		if (typeof module === 'object') { window.module = module; module = undefined; }
+	</script>
+	
+	<script>
+		var os = require('os');
+
+		var interfaces = os.networkInterfaces();
+		var addresses = [];
+		for (var k in interfaces) {
+			for (var k2 in interfaces[k]) {
+				var address = interfaces[k][k2];
+				if (address.family === 'IPv4' && !address.internal) {
+					addresses.push(address.address);
+				}
+			}
+		}
+
+		console.log(addresses);
+	</script>
+</head>
+<body>
+    <script>
+        // similar behavior as an HTTP redirect
+        //window.location.replace("Antrian/antrian_utama.html");
+        //window.location.replace("Antrian/ambil_antrian.html");
+    </script>
+
+	
+	
+    <script type="text/javascript" src="jquery.min.js"></script>
+</body>
+
+<script>
+	const electron = require('electron')
+	// Importing BrowserWindow from Main 
+
+	const fs = window.require('fs')
+	const path = window.require('path')
+	const cmd = window.require('node-cmd')
+
+	//Save the raw output to the filesystem
+	const filePath = path.join(__dirname, 'ctktestestes.txt') //or wherever you want to save it
+	console.log(filePath);
+	// return;
+	//Create a command to copy the file to the shared printer path (e.g. \\localhost\DPD ). Make sure that var is sanitised first! 
+	const command = `COPY /B "${filePath}" "LPT1"`
+
+	cmd.get(command, (err, data, stderr) => {
+
+		if (!err) {
+			console.log('Success!')
+		} else {
+			console.log(err.message)
+		}
+
+	})
+
+	//commentingg below
+	// const BrowserWindow = electron.remote.BrowserWindow;
+
+	// var current = document.getElementById('current');
+	// var options = {
+	// 	silent: true,
+	// 	printBackground: true,
+	// 	color: false,
+	// 	margin: {
+	// 		marginType: 'printableArea'
+	// 	},
+	// 	landscape: false,
+	// 	pagesPerSheet: 1,
+	// 	collate: false,
+	// 	copies: 1,
+	// 	header: 'Header of the Page',
+	// 	footer: 'Footer of the Page',
+	// 	// deviceName:''
+	// }
+
+
+	// current.addEventListener('click', (event) => {
+	// 	let win = BrowserWindow.getFocusedWindow();
+	// 	// let win = BrowserWindow.getAllWindows()[0]; 
+	// // var tes='<html><body><h2>HTML Forms</h2><form action="/action_page.php">  <label for="fname">First name:</label><br>  <input type="text" id="fname" name="fname" value="John"><br>  <label for="lname">Last name:</label><br>  <input type="text" id="lname" name="lname" value="Doe"><br><br>  <input type="submit" value="Submit"></form> <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p></body></html>';
+
+	// 			win.webContents.print(options, (success, failureReason) => {
+	// 			// tes.print(options, (success, failureReason) => {
+	// 				if (!success) console.log(failureReason);
+
+	// 				console.log('Print Initiated');
+	// 			});
+	// }); 
+</script>
+
+
+</html>

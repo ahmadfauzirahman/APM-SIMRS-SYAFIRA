@@ -1,7 +1,0 @@
-.page-wrapper .page-content {
-    min-height: calc(91vh - 60px - 50px);
-}
-
-.chat-wrapper{
-    height: calc(65vh - 60px - 50px);
-}
